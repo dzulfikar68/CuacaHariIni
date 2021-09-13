@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:layout_gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <EditText
+        android:hint="@string/nama_kota"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_name"
+        android:importantForAutofill="no" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:hint="@string/latitude"
+            android:inputType="numberDecimal|numberSigned"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_lat"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:hint="@string/longitude"
+            android:inputType="numberDecimal|numberSigned"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_lon"
+            android:importantForAutofill="no" />
+
+    </LinearLayout>
+
+    <Button
+        style="@style/ThemeOverlay.AppCompat.Dark"
+        android:id="@+id/btn_submit"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"/>
+
+</LinearLayout>

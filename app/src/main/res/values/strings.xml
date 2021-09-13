@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Cuara Hari Ini (Weather Now)</string>
+    <string name="submit">Submit</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="nama_kota">Nama Kota (City Name)</string>
+    <string name="masukkan_nama_kota">Masukkan Nama Kota (Input City Name)</string>
+    <string name="humidity">Kelembaban (Humidity)</string>
+    <string name="pressure">Tekanan Udara (Pressure)</string>
+    <string name="forecast">Perkiraan Cuaca Besok (Forecast)</string>
+    <string name="cari_nama_kota_search_city_name">Cari Nama Kota (Search City Name)</string>
+    <string name="cari_nama_kota_search_country_name">Cari Nama Negara (Search Country Name)</string>
+    <string name="mapbox_access_token">MAPBOX_ACCESS_TOKEN</string>
+    <string name="by_manual">Write</string>
+    <string name="by_maps">Maps</string>
+    <string name="setting">Setting</string>
+</resources>

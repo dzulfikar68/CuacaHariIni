@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:baselineAligned="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:padding="10dp"
+                android:background="@color/purple_500"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/ms_city"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+                <ImageButton
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/btn_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_add_24"
+                    tools:ignore="ContentDescription" />
+                <ImageButton
+                    android:id="@+id/btn_refresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_refresh_24"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@color/purple_200"
+                android:id="@+id/ll_content"
+                android:padding="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_marginBottom="20dp"
+                        android:id="@+id/iv_picture"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:src="@color/purple_600"
+                        tools:ignore="ContentDescription" />
+                    <TextView
+                        android:textSize="27sp"
+                        android:textColor="@color/purple_700"
+                        android:id="@+id/tv_weather"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        tools:text="Rainy"/>
+                    <TextView
+                        android:textSize="20sp"
+                        android:textColor="@color/grey"
+                        android:id="@+id/tv_date"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Friday"/>
+                    <TextView
+                        android:textSize="15sp"
+                        android:textColor="@color/grey"
+                        android:id="@+id/tv_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="italic"
+                        tools:text="Indonesia"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/purple_700"
+                        android:id="@+id/tv_percent"
+                        android:textSize="70sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:textStyle="bold"
+                        tools:text="28 °C"/>
+                    <TextView
+                        android:textSize="17sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@color/purple_700"
+                        android:text="@string/pressure"/>
+                    <TextView
+                        android:textSize="20sp"
+                        android:id="@+id/tv_pressure"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/grey"
+                        android:layout_marginBottom="20dp"
+                        tools:text="10.0 hPa"/>
+                    <TextView
+                        android:textSize="17sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@color/purple_700"
+                        android:text="@string/humidity"/>
+                    <TextView
+                        android:textSize="20sp"
+                        android:textColor="@color/grey"
+                        android:id="@+id/tv_humidity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="65%"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                tools:visibility="visible"
+                android:visibility="gone"
+                android:id="@+id/rl_info"
+                android:background="@color/purple_200"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/iv_info"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:src="@drawable/ic_up_weather"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:background="@color/purple_50"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_forecast"
+                    android:textSize="20sp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/purple_700"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="@string/forecast"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_forecast"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+</FrameLayout>

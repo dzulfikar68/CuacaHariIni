@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:layout_gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:visibility="visible"
+        android:gravity="end|center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_maps"
+            android:drawableEnd="@drawable/ic_baseline_map_24"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/by_maps"/>
+        <Button
+            android:id="@+id/btn_manual"
+            android:layout_marginHorizontal="5dp"
+            android:drawableEnd="@drawable/ic_baseline_create_24"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/by_manual"/>
+        <ImageButton
+            android:id="@+id/btn_close"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_close_24"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/grey"/>
+
+    <com.jaredrummler.materialspinner.MaterialSpinner
+        android:id="@+id/ms_country"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:hint="@string/cari_nama_kota_search_city_name"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_search"
+        android:layout_marginBottom="10dp"
+        android:importantForAutofill="no" />
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/pg_loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageButton
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:id="@+id/btn_refresh"
+        android:src="@drawable/ic_baseline_refresh_24"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="ContentDescription" />
+
+    <ListView
+        android:id="@+id/lv_cities"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
