@@ -19,9 +19,9 @@ class SettingActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val webView = findViewById<WebView>(R.id.webView)
-        webView.loadFile("setting.html")
+        webView.loadFile("settings/index.html")
 
-//        loadWebView(null)
+//        loadWebView("https://raw.githubusercontent.com/dzulfikar68/CuacaHariIni/master/app/src/main/assets/setting.html")
     }
 
     fun WebView.loadFile(filePath: String?) {

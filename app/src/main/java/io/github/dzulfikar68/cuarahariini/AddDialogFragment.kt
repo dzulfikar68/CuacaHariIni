@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.snackbar.Snackbar
 import io.github.dzulfikar68.cuarahariini.databinding.FragmentAddBinding
@@ -29,6 +30,11 @@ class AddDialogFragment(private var callback: AddCallback?): BottomSheetDialogFr
                 val longitude = fragmentAddBinding.etLon.text.trim().toString()
                 if (cityName.isBlank() || latitude.isBlank() || longitude.isBlank()) {
                     Snackbar.make(fragmentAddBinding.root, "Please fill all form", Snackbar.LENGTH_LONG).show()
+                    Toast.makeText(
+                            context,
+                            "Silakan isi semua formulir (Please fill all form)",
+                            Toast.LENGTH_SHORT
+                    ).show()
                 } else {
                     callback?.onClick(cityName, latitude, longitude)
                 }

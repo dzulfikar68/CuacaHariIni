@@ -142,6 +142,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun restartActivity(){
+        binding.container.visibility = View.INVISIBLE
+        binding.pgLoading.visibility = View.VISIBLE
         object : CountDownTimer(2000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
             }
@@ -156,7 +158,7 @@ class MainActivity : AppCompatActivity() {
         listCity.add(City(0, "--Pilih Kota (Choose City)--", "-", 0.0, 0.0))
         val savedCities = CityPreference.getCities(this@MainActivity).reversed()
         listCity.addAll(savedCities)
-        listCity.add(City(9, "Posisi GPS saat ini (Now Location)", "-", 0.0, 0.0))
+        listCity.add(City(9, "Now Location (GPS)", "-", 0.0, 0.0))
         val citiesIndonesia = JsonParserLocation(this).getDataCityDataSet().sortedBy { it.name }
         listCity.addAll(citiesIndonesia)
         binding.msCity.setItems(listCity)
@@ -258,9 +260,12 @@ class MainActivity : AppCompatActivity() {
                     call: Call<OpenWeatherResponse>,
                     response: Response<OpenWeatherResponse>
             ) {
+                binding.llContent.visibility = View.VISIBLE
                 binding.swipeRefresh.isRefreshing = false
                 val data = response.body()
-                val listWeather = data?.daily ?: emptyList()
+                val listWeather = data?.daily?.filterIndexed { index, dailyResponse ->
+                    index != 0
+                } ?: emptyList()
                 weatherAdapter.setList(listWeather)
                 val weatherName =
                         data?.current?.weather?.get(0)?.description?.capitalizeWords() ?: "-"
