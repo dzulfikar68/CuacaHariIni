@@ -29,7 +29,6 @@ class AddDialogFragment(private var callback: AddCallback?): BottomSheetDialogFr
                 val latitude = fragmentAddBinding.etLat.text.trim().toString()
                 val longitude = fragmentAddBinding.etLon.text.trim().toString()
                 if (cityName.isBlank() || latitude.isBlank() || longitude.isBlank()) {
-                    Snackbar.make(fragmentAddBinding.root, "Please fill all form", Snackbar.LENGTH_LONG).show()
                     Toast.makeText(
                             context,
                             "Silakan isi semua formulir (Please fill all form)",
@@ -37,8 +36,8 @@ class AddDialogFragment(private var callback: AddCallback?): BottomSheetDialogFr
                     ).show()
                 } else {
                     callback?.onClick(cityName, latitude, longitude)
+                    dismiss()
                 }
-                dismiss()
             }
         }
     }
